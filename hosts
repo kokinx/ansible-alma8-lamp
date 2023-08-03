@@ -1,5 +1,5 @@
 [lamp-server]
-52.194.241.249
+127.0.0.1
 
 [lamp-server:vars]
 ansible_user=ec2-user
