@@ -10,23 +10,23 @@ user_password: test_password!
 domain_name: testexampleshiken.com
 serveradmin: test
 
-#php
-##php version
-php_version: 74
-
-##php modules
+#php modules
 php_modules:
-  - "php"
-  - "php-cli"
-  - "php-devel"
-  - "php-common"
-  - "php-json"
-  - "php-xml"
-  - "php-mbstring"
-  - "php-pdo"
-  - "php-gd"
-  - "php-process"
-  - "php-intl"
-  - "php-mysql"
-  - "php-fpm"
+  - php80
+  - php80-php-cli
+  - php80-php-devel
+  - php80-php-common
+  - php80-php-json
+  - php80-php-xml
+  - php80-php-mbstring
+  - php80-php-pdo
+  - php80-php-gd
+  - php80-php-process
+  - php80-php-intl
+  - php80-php-mysql
+  - php80-php-fpm
 
+#mysql
+mysql_items:
+  - mysql
+  - mysql-server

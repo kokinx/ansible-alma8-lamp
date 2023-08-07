@@ -4,7 +4,7 @@
     swap_file_path: /swap.img
 
 - name: create swap zone
-  command: dd if=/dev/zero of={{ swap_file_path }} bs=1M count=4096
+  command: dd if=/dev/zero of={{ swap_file_path }} bs=1M count=100
   args:
     creates: '{ swap_file_path }}'
 

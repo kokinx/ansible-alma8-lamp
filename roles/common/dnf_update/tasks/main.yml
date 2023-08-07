@@ -1,5 +1,5 @@
 ---
-- name: yum update
-  yum:
+- name: dnf update
+  dnf:
     name: '*'
     state: latest

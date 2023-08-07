@@ -1,6 +1,6 @@
 ---
 - name: install httpd
-  yum:
+  dnf:
     name: httpd
     state: latest
 
@@ -8,7 +8,6 @@
   service:
     name: httpd
     state: started
-    #enabled: yes
 
 - name: enable httpd
   service:
@@ -19,6 +18,8 @@
   file:
     path: /var/www/vhosts/{{ domain_name }}/public_html
     state: directory
+    owner: apache
+    group: apache
     mode: "0755"
     recurse: yes
 

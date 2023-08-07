@@ -1,11 +1,11 @@
 ---
 - name: remove mariadb
-  yum:
+  dnf:
     name: mariadb-libs
     state: absent
 
 - name: remove default mysql-community
-  yum:
+  dnf:
     name: mysql-community-*
     state: absent
 
@@ -14,27 +14,23 @@
     key: https://repo.mysql.com/RPM-GPG-KEY-mysql-2022
     state: present
 
-- name: install repositry for mysql
-  yum:
-    name: https://repo.mysql.com//mysql80-community-release-el7-7.noarch.rpm
+- name: install repository for mysql-server
+  shell: yum localinstall https://dev.mysql.com/get/mysql80-community-release-el8-1.noarch.rpm -y
+
+- name: disable mysql:8.0
+  shell: dnf module disable mysql:8.0 -y
+
+- name: install mysql8
+  dnf:
+    name: "{{ item }}"
     state: present
-  ignore_errors: yes
+  with_items:
+    - "{{ mysql_items }}"
 
 - name: install optional packages
-  yum:
+  dnf:
     name:
-      - MySQL-python
       - expect
-    state: present
-
-- name: install mysql community devel
-  yum:
-    name: mysql-community-devel*
-    state: present
-
-- name: install mysql community server
-  yum:
-    name: mysql-community-server
     state: present
 
 - name: start mysql

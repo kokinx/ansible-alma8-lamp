@@ -8,7 +8,7 @@
     - common/selinux
     - common/swap
     - common/user_add
-    - common/yum_update
+    - common/dnf_update
     - httpd
     - php
     - mysql
