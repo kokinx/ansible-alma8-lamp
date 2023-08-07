@@ -15,7 +15,7 @@
     state: present
 
 - name: install repository for mysql-server
-  shell: yum localinstall https://dev.mysql.com/get/mysql80-community-release-el8-1.noarch.rpm -y
+  shell: dnf localinstall https://dev.mysql.com/get/mysql80-community-release-el8-1.noarch.rpm -y
 
 - name: disable mysql:8.0
   shell: dnf module disable mysql:8.0 -y
